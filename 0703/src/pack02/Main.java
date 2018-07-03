@@ -32,6 +32,7 @@ public class Main {
 		r= str.length();			//길이		Hello!!라서 7개  길이는 1부터
 		System.out.println(r);
 		p5.pp7();		//this. 관련
+		System.out.println("추가작업");
 	}
 
 }
