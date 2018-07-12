@@ -65,61 +65,61 @@ public class Main {
 		} catch (Exception e) {
 			System.err.println("잘못된 값을 출력하셨습니다");
 		}
-		
-		//정수만 입력 받고, 이외의 것을 입력하면 정수를 입력받을 때까지 무한반복
-//		int kk=0;	//무언가가 대입되는 변수는 초기값 필수
-//		Scanner sc=new Scanner(System.in);
-//		while(true) {
-//			System.out.print("정수 입력 : ");
-//			String temp = sc.nextLine();
-//			try {
-//				kk=Integer.parseInt(temp);	//정수 이외의 것을 입력받으면 예외되기에 예외처리 해줘야함
-//			break;	//정상적으로 정수를 입력받으면 반복 종료  - 없으면  System.out.println(kk); 쪽에 에러
-//			}catch(Exception e) {
-//				System.out.println("정수를 입력해주세요");//정수 이외의 것을 입력받으면 다음에는 정수를 입력하게끔 안내하는 출력문
-//			}
-//		}
-//		System.out.println(kk);
-//		sc.close();//안쓰면 위에 java.util.Scanner 작성해야함
-		
-		//1~45까지 중복되지 않는 6개의 정수 저장
-		Scanner sc=new Scanner(System.in);	//참조형은 기본값이 0이기에 입력받지 않았으면 0으로 출력
-		int ar[] = new int[6];			//데이터 저장받을 배열
-		int size = ar.length;			//인덱스 - 배열길이
-		int br[] = new int[size];  		//데이터 개수 저장받을 배열 
+
+		// 정수만 입력 받고, 이외의 것을 입력하면 정수를 입력받을 때까지 무한반복
+		// int kk=0; //무언가가 대입되는 변수는 초기값 필수
+		// Scanner sc=new Scanner(System.in);
+		// while(true) {
+		// System.out.print("정수 입력 : ");
+		// String temp = sc.nextLine();
+		// try {
+		// kk=Integer.parseInt(temp); //정수 이외의 것을 입력받으면 예외되기에 예외처리 해줘야함
+		// break; //정상적으로 정수를 입력받으면 반복 종료 - 없으면 System.out.println(kk); 쪽에 에러
+		// }catch(Exception e) {
+		// System.out.println("정수를 입력해주세요");//정수 이외의 것을 입력받으면 다음에는 정수를 입력하게끔 안내하는 출력문
+		// }
+		// }
+		// System.out.println(kk);
+		// sc.close();//안쓰면 위에 java.util.Scanner 작성해야함
+
+		// 1~45까지 중복되지 않는 6개의 정수 저장
+		Scanner sc = new Scanner(System.in); // 참조형은 기본값이 0이기에 입력받지 않았으면 0으로 출력
+		int ar[] = new int[6]; // 데이터 저장받을 배열
+		int size = ar.length; // 인덱스 - 배열길이
+		int br[] = new int[size]; // 데이터 개수 저장받을 배열
 		int b;
-//		for(int a=0;a<size;a++) {		//배열의 모든 데이터 출력(for)
-//			System.out.print(ar[a]);
-//		}
-//		int a = 0;
-//		while(a<size) {					//배열의 모든 데이터 출력(while)
-//			System.out.print(ar[a]);
-//			a++;
-//		}
-		
+		// for(int a=0;a<size;a++) { //배열의 모든 데이터 출력(for)
+		// System.out.print(ar[a]);
+		// }
+		// int a = 0;
+		// while(a<size) { //배열의 모든 데이터 출력(while)
+		// System.out.print(ar[a]);
+		// a++;
+		// }
+
 		for (int a = 0; a < size; a++) {
 			try {
 				System.out.print("정수 입력 : "); // 문자입력 시에 예외가 되므로 그를 위한 예외처리 1
 				String ak = sc.nextLine();
 
 				ar[a] = Integer.parseInt(ak);
-//				for (b = 0; b < a; b++) {// 이전에 입력했던 값 중에서 중복이 있는지 확인이므로 맨 첫번째~a횟수 까지 검사
-//					if (ar[a] == ar[b]) {
-//						System.out.println("중복된 값이 있사오니 다시 입력해주세요.");
-//						a = a - 1;
-//					}
-//				}
-				for (b = 0; b < a; b++) {// 중복 입력하면 반복문 종료		여기다 b를 새로 선언했다면 아랫쪽에서도 새로 b를 선언해야하기에 미리 b를 선언
-				if (ar[a] == ar[b]) {
+				// for (b = 0; b < a; b++) {// 이전에 입력했던 값 중에서 중복이 있는지 확인이므로 맨 첫번째~a횟수 까지 검사
+				// if (ar[a] == ar[b]) {
+				// System.out.println("중복된 값이 있사오니 다시 입력해주세요.");
+				// a = a - 1;
+				// }
+				// }
+				for (b = 0; b < a; b++) {// 중복 입력하면 반복문 종료 여기다 b를 새로 선언했다면 아랫쪽에서도 새로 b를 선언해야하기에 미리 b를 선언
+					if (ar[a] == ar[b]) {
 						break;
-				}	
-			}
-			//이전 데이터와 방금 입력된 데이터가 동일하면 횟수 복구
-			if(b != a) {
-				System.out.println("중복된 값이 있사오니 다시 입력해주세요.");
-				a = a - 1;
-				continue;
-			}
+					}
+				}
+				// 이전 데이터와 방금 입력된 데이터가 동일하면 횟수 복구
+				if (b != a) {
+					System.out.println("중복된 값이 있사오니 다시 입력해주세요.");
+					a = a - 1;
+					continue;
+				}
 				if (ar[a] > 45 || ar[a] < 1) {
 					System.out.println("1~45 정수를 입력해주세요");
 					a = a - 1;
@@ -129,9 +129,9 @@ public class Main {
 				a = a - 1; // 증가했던 값을 다시 되돌리면 횟수 원상복구
 			}
 		}
-		for(int a=0;a<size;a++) {	//출력
+		for (int a = 0; a < size; a++) { // 출력
 
-		System.out.printf("%3d",ar[a]);
+			System.out.printf("%3d", ar[a]);
 		}
 	}
 
