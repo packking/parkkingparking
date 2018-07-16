@@ -53,7 +53,7 @@ public class test02 {
 		char ar[] = new char[size];
 		char vr[] = new char[size2];
 		int cnt = ((-1) * size2), gg = 0;
-
+			//초반 검색 관련
 		for (a = 0; a < size; a++) {
 			ar[a] = acgtSequence.charAt(a); // 번호에 해당되는 문자를 한 글자식 가져오는 역할
 		}
