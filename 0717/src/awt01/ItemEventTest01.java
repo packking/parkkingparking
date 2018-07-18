@@ -53,23 +53,23 @@ public class ItemEventTest01 extends Frame {
 			public void itemStateChanged(ItemEvent e) {
 				cbvr.removeAll();	//여기다 aaa cbvr.removeAll();를 하면  71번 줄의 aa코드를 쓰지 않아도 됨
 				int arnb = cbar.getSelectedIndex();
-				if (arnb == 1) {
-					
-						cbvr.removeAll();		//항목 전체 지우기 ->따로따로 지우는 경우가 아니기에 -> 데이터 1개씩 삭제할 때나 remove 사용 ->광범위조건 제거~전체제거=removeAll
-					
-					for (String s2 : vr[0]) {
-						cbvr.add(s2);
-					}
-				} else if(arnb==2) {
-					
-						cbvr.removeAll();
-					
-					for (String s2 : vr[1]) {
-						cbvr.add(s2);
+//				if (arnb == 1) {
+//						//cbvr.removeAll();		//항목 전체 지우기 ->따로따로 지우는 경우가 아니기에 -> 데이터 1개씩 삭제할 때나 remove 사용 ->광범위조건 제거~전체제거=removeAll
+//					for (String s2 : vr[0]) {
+//						cbvr.add(s2);
+//					}
+//				} else if(arnb==2) {
+//						
+//					for (String s2 : vr[1]) {
+//						cbvr.add(s2);
+//					}
+//				}
+//				else if(arnb==0){cbvr.removeAll();}	//이걸 선택하면 이전 데이터가 남기에...	->aaa
+				if (arnb != 0) {						//위의 작업을 아래로 단축
+					for (String as : vr[arnb - 1]) {
+						cbvr.add(as);
 					}
 				}
-//				else if(arnb==0){cbvr.removeAll();}	//이걸 선택하면 이전 데이터가 남기에...	->aaa
-
 			}
 
 		};

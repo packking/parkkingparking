@@ -27,7 +27,6 @@ public class test01 {
 		}
 
 	}
-
 	void drawTriangle(int lineNumber) {	//삼각형 제작
 
 		int a, x = 0, y = 0, cnt = 0;
@@ -59,8 +58,7 @@ public class test01 {
 			else {
 				System.out.print(" ");
 			}
-			// ((라인수 *2)-1)배수씩 줄내림 + 사이드 벌리기
-			if (a % ((r * 2) - 1) == 0) {
+			if (a % ((r * 2) - 1) == 0) {// ((라인수 *2)-1)배수씩 줄내림 + 사이드 벌리기
 				System.out.println("");
 				if (cnt >= 0) {
 					c = (mid - 1) - (cnt); // 서남방향 사이드
