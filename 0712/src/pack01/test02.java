@@ -52,8 +52,7 @@ public class test02 {
 
 		char ar[] = new char[size];
 		char vr[] = new char[size2];
-		int cnt = ((-1) * size2), gg = 0;
-			//초반 검색 관련
+		int gg = ((-1) * size2), count = 0;//gg = 초반 검색 관련, count = assassa,assa = 1 만 취급하고, 4는 취급 안하게 해주려고
 		for (a = 0; a < size; a++) {
 			ar[a] = acgtSequence.charAt(a); // 번호에 해당되는 문자를 한 글자식 가져오는 역할
 		}
@@ -61,17 +60,17 @@ public class test02 {
 			vr[b] = Codon.charAt(b); // 번호에 해당되는 문자를 한 글자식 가져오는 역할
 
 		}
-		for (a = 0; a < (size - size2) + 1; a++) {
+		for (a = 0; a < (size - size2) + 1; a++) {	//acgtSequence을 Codon으로 비교탐색
 			for (b = 0; b < size2; b++) {
 				if (ar[(a + b)] == vr[b]) {
-					gg = gg + 1;
+					count = count + 1;			//글자 하나씩 탐색 후에 Codon이랑 일치한 부분마다 +1씩 카운트 누적
 				}
 			}
-			if (gg == (size2) && (a + 1) - cnt >= size2) {
-				cnt = (a + 1);
-				System.out.printf("%d번 문자  ", cnt);
+			if (count == (size2) && (a + 1) - gg >= size2) {	//카운트가 Codon의 문자개수와 일치하면 동일 할 때
+				gg = (a + 1);								
+				System.out.printf("%d번 문자  ", gg);
 			}
-			gg = 0;
+			count = 0;
 		}
 	}
 }
