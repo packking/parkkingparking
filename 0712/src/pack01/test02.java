@@ -67,7 +67,7 @@ public class test02 {
 				}
 			}
 			if (count == (size2) && (a + 1) - gg >= size2) {	//카운트가 Codon의 문자개수와 일치하면 동일 할 때
-				gg = (a + 1);								
+				gg = (a + 1);									//초기 검색이 끝났으면 숫자출력관련으로 변환						
 				System.out.printf("%d번 문자  ", gg);
 			}
 			count = 0;
