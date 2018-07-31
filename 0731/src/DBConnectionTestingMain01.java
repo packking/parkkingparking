@@ -5,7 +5,7 @@ public class DBConnectionTestingMain01 {
 
 	public static void main(String[] args) {
 		
-		//사용하고자 하는 드라이버 클래스 로드(데이터베이스 종류에 따라 다름)
+		//사용하고자 하는 드라이버 클래스 로드(데이터베이스 종류에 따라 다릅니다)
 		//데이터베이스 연결 변수 선언
 		// 반드시 close()를 호출해야 하므로 finally에서 close 호출받음
 		Connection con = null;
