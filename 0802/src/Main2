@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>리포트</title>
+</head>
+<body>
+<h2>내 스키마의 템플릿</h2>
+<table border="1">
+    <tr>
+        <td colspan="6">t01 (TABLE)</td>
+    </tr>
+    <tr>
+        <td>논리명</td>
+        <td>물리명</td>
+        <td>도메인</td>
+        <td>데이터 타입</td>
+        <td>Not Null</td>
+        <td>설명</td>
+    </tr>
+</table>
+<table border="1">
+    <tr>
+        <td colspan="6">user (TABLE2)</td>
+    </tr>
+    <tr>
+        <td>논리명</td>
+        <td>물리명</td>
+        <td>도메인</td>
+        <td>데이터 타입</td>
+        <td>Not Null</td>
+        <td>설명</td>
+    </tr>
+    <tr>
+        <td>Num(PK)</td>
+        <td>num</td>
+        <td>N/A</td>
+        <td>INTEGER</td>
+        <td>Y</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>name</td>
+        <td>name</td>
+        <td>N/A</td>
+        <td>VARCHAR2()</td>
+        <td>Y</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>age</td>
+        <td>age</td>
+        <td>N/A</td>
+        <td>INTEGER</td>
+        <td>Y</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>gender</td>
+        <td>gender</td>
+        <td>N/A</td>
+        <td>VARCHAR2()</td>
+        <td>Y</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>address</td>
+        <td>address</td>
+        <td>N/A</td>
+        <td>VARCHAR2()</td>
+        <td>Y</td>
+        <td>&nbsp;</td>
+    </tr>
+</table>
+<table border="1">
+    <tr>
+        <td colspan="6">board (TABLE3)</td>
+    </tr>
+    <tr>
+        <td>논리명</td>
+        <td>물리명</td>
+        <td>도메인</td>
+        <td>데이터 타입</td>
+        <td>Not Null</td>
+        <td>설명</td>
+    </tr>
+    <tr>
+        <td>boardnumber(PK)</td>
+        <td>boardnumber</td>
+        <td>N/A</td>
+        <td>INTEGER</td>
+        <td>Y</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>Num(FK)</td>
+        <td>num2</td>
+        <td>N/A</td>
+        <td>INTEGER</td>
+        <td>Y</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>title</td>
+        <td>title</td>
+        <td>N/A</td>
+        <td>VARCHAR2()</td>
+        <td>Y</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>text</td>
+        <td>text</td>
+        <td>N/A</td>
+        <td>CLOB</td>
+        <td>N</td>
+        <td>&nbsp;</td>
+    </tr>
+</table>
+</body>
+</html>
