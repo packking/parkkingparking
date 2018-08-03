@@ -3,7 +3,7 @@ package templetmethodTest;
 import java.sql.Date;
 import java.util.*;
 
-public class TestMain2_Update {
+public class TestMain3_Update {
 
 	public static void main(String[] args) {
 				//인터페이스나 클래스를 상속한 경우에는

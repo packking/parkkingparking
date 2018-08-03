@@ -24,8 +24,8 @@ public class BroadcastSendTest {
 				ms = ss.nextLine();
 				ms = nickname + " : " + ms; // 메세지 제작
 				// 전송할 패킷 만들기
-				dpk = new DatagramPacket(ms.getBytes(), ms.getBytes().length, InetAddress.getByName("192.168.0.255"),
-						7777); // 192.168.0.까지 같아야함
+				dpk = new DatagramPacket(ms.getBytes(), ms.getBytes().length, 
+						InetAddress.getByName("192.168.0.255"),7777); // 192.168.0.까지 같아야함
 				ds.send(dpk); // 데이터전송
 			}
 

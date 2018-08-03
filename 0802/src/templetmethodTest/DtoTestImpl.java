@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -17,7 +18,7 @@ public class DtoTestImpl implements DtoTest {
 	private void dbconnect() {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			con = DriverManager.getConnection("jdbc:oracle:thin:@192.168.0.231:1521:xe", "scott", "tiger"); // 데이터베이스 연결
+			con = DriverManager.getConnection("jdbc:oracle:thin:@192.168.0.5 :1521:xe", "scott", "tiger"); // 데이터베이스 연결
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -142,14 +143,58 @@ public class DtoTestImpl implements DtoTest {
 
 	@Override
 	public List<Ct> allreadCt() {
-		// TODO Auto-generated method stub
-		return null;
+		List<Ct> list = new ArrayList<Ct>();	//읽어오는 데이터들을 저장시키기 위한 List 생성
+		dbconnect();	//데이터베이스 드라이버 연결
+		try {
+			//sql	-> ct테이블의 데이터 전부 가져오기
+			pst = con.prepareStatement("select num,name,birthday,pnum,address "+"from ct");
+			rs= pst.executeQuery();
+			while(rs.next()) {		//검색하는 데이터가 여러 개일 경우가 있으므로 반복문
+				Ct ct = new Ct();
+				ct.setNum(rs.getInt("num"));
+				ct.setName(rs.getString("name"));
+				ct.setBirthday(rs.getDate("birthday"));
+				ct.setPnum(rs.getString("pnum"));
+				ct.setAddress(rs.getString("address"));
+				
+				
+				list.add(ct);	//읽은 데이터들을 최종적으로 list에 저장
+			}
+		}catch(Exception e){
+			System.err.println(e.getMessage());
+			e.printStackTrace();
+		}
+		dbConnectClose();	//연결 끊기
+		return list;
 	}
 
 	@Override
 	public List<Ct> nameCt(String name) {
-		// TODO Auto-generated method stub
-		return null;
+		List<Ct>list = new ArrayList<Ct>();
+		dbconnect();
+		try {
+			pst = con.prepareStatement("select num,name,birthday,pnum,address "+"from ct where name = ?");
+			pst.setString(1, name);		//where 조건문에 있는 ?에 대한 데이터 바인딩
+			//pst = con.prepareStatement("select num,name,birthday,pnum,address "+"from ct where name like ?");
+			//pst.setString(1, "%"+name+"%");	//ex)진 만 입력 -> 이름에 진 이 들어간 회원들의 정보 전부 출력
+			rs=pst.executeQuery();
+			while(rs.next()) {		//검색하는 데이터가 여러 개일 경우가 있으므로 반복문
+				Ct ct = new Ct();	//
+				ct.setNum(rs.getInt("num"));
+				ct.setName(rs.getString("name"));
+				ct.setBirthday(rs.getDate("birthday"));
+				ct.setPnum(rs.getString("pnum"));
+				ct.setAddress(rs.getString("address"));
+				
+				list.add(ct);	//읽은 데이터들을 최종적으로 list에 저장
+			}
+			
+		}catch(Exception e) {
+			System.out.println(e.getMessage());
+			e.printStackTrace();
+		}
+		dbConnectClose();
+		return list;
 	}
 
 	@Override
